@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - 
-        name: set lower case owner name
+        name: set lower case repository name
         run: |
           echo "REPOSITORY_LC=${REPOSITORY,,}" >>${GITHUB_ENV}
         env:
@@ -18,7 +18,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: env
+      - 
+        name: Show all env variables
+        run: env
       - 
         name: Build and Push dockerimage
         uses: docker/build-push-action@v3
