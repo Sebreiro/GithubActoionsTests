@@ -18,7 +18,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - RUN: env
+      - run: env
       - 
         name: Build and Push dockerimage
         uses: docker/build-push-action@v3
