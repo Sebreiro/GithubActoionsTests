@@ -1,5 +1,5 @@
 name: Manual Test Workflow
-on: workflow_diapatch
+on: workflow_dispatch
 
 jobs:
   FirstJob:
