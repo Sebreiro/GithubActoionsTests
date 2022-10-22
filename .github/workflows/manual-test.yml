@@ -1,0 +1,8 @@
+name: Manual Test Workflow
+on: workflow_diapatch
+
+jobs:
+  FirstJob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Test Workflow"
