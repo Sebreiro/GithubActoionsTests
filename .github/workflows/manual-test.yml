@@ -18,4 +18,4 @@ jobs:
         with:
           file: src/DockerFiles/TestHelloWorld.dockerfile
           push: true
-          tags: ghcr.io/user/test-image:latest
+          tags: ghcr.io/sebreiro/test-image:latest
