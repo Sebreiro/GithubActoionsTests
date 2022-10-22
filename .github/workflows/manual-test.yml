@@ -6,3 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test Workflow"
+      - name: Build and Push dockerimage
+        uses: docker/build-push-action@v3
+        with:
+          file: src/DockerFiles/TestHelloWorld.dockerfile
+          push: true
+          tags: test-image:latest
