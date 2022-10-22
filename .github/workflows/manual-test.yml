@@ -21,6 +21,9 @@ jobs:
       - 
         name: Show all env variables
         run: env
+      -
+        name: Show current tag
+        run: ${{github.ref_name}}
       - 
         name: Build and Push dockerimage
         uses: docker/build-push-action@v3
