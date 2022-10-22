@@ -10,7 +10,7 @@ jobs:
         run: |
           echo "REPOSITORY_LC=${REPOSITORY,,}" >>${GITHUB_ENV}
         env:
-          REPOSITORY: '${{ github.repository_owner }}'
+          REPOSITORY: '${{ github.repository }}'
       - 
         name: Login to github registry
         uses: docker/login-action@v2
@@ -18,10 +18,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - RUN: env
       - 
         name: Build and Push dockerimage
         uses: docker/build-push-action@v3
         with:
           file: src/DockerFiles/TestHelloWorld.dockerfile
           push: true
-          tags: ghcr.io/${REPOSITORY_LC}/test-image:latest
+          tags: ghcr.io/ $REPOSITORY_LC /test-image:latest
