@@ -21,4 +21,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       -
         name: Show current tag
-        run: echo "${{ github.ref_name }}"
+        run: echo "ref_name ${{ github.ref_name }}. ref ${{ github.ref }} base_ref ${{ github.event.base_ref  }}"

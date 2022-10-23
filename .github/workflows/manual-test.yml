@@ -33,4 +33,7 @@ jobs:
         with:
           file: src/DockerFiles/TestHelloWorld.dockerfile
           push: true
-          tags: ghcr.io/${{ env.REPOSITORY_LC }}/test-image:latest
+          tags: | 
+            ghcr.io/${{ env.REPOSITORY_LC }}/test-image:latest
+            ghcr.io/${{ env.REPOSITORY_LC }}/test-image:${{ github.ref }}
+            ghcr.io/${{ env.REPOSITORY_LC }}/test-image:other-tag
